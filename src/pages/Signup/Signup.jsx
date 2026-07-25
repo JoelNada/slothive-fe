@@ -116,25 +116,33 @@ function Signup() {
           />
           {errors.confirmPassword && <p className={styles.fieldError}>{errors.confirmPassword}</p>}
 
-          <fieldset>
+          <fieldset className={styles.roleFieldset}>
             <legend>I'm signing up as a...</legend>
-            <input
-              type="radio"
-              id="role-customer"
-              name="role"
-              checked={role === 'customer'}
-              onChange={() => setRole('customer')}
-            />
-            <label htmlFor="role-customer">Customer — I want to book experiences</label>
+            <div className={styles.roleGroup}>
+              <label className={`${styles.roleCard} ${role === 'customer' ? styles.roleCardSelected : ''}`}>
+                <input
+                  type="radio"
+                  name="role"
+                  className={styles.roleInput}
+                  checked={role === 'customer'}
+                  onChange={() => setRole('customer')}
+                />
+                <span className={styles.roleTitle}>Customer</span>
+                <span className={styles.roleDesc}>I want to book experiences</span>
+              </label>
 
-            <input
-              type="radio"
-              id="role-host"
-              name="role"
-              checked={role === 'host'}
-              onChange={() => setRole('host')}
-            />
-            <label htmlFor="role-host">Host — I want to list a space or class</label>
+              <label className={`${styles.roleCard} ${role === 'host' ? styles.roleCardSelected : ''}`}>
+                <input
+                  type="radio"
+                  name="role"
+                  className={styles.roleInput}
+                  checked={role === 'host'}
+                  onChange={() => setRole('host')}
+                />
+                <span className={styles.roleTitle}>Host</span>
+                <span className={styles.roleDesc}>I want to list a space or class</span>
+              </label>
+            </div>
           </fieldset>
 
           <label className={styles.checkboxLabel} htmlFor="terms">
@@ -144,7 +152,7 @@ function Signup() {
               checked={agreeTerms}
               onChange={(e) => setAgreeTerms(e.target.checked)}
             />
-            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
           </label>
           {errors.agreeTerms && <p className={styles.fieldError}>{errors.agreeTerms}</p>}
 
