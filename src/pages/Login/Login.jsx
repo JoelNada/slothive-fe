@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { login } from '../../utils/mockAuth.js'
+import { useAuth } from '../../context/AuthContext.jsx'
 import styles from './Login.module.css'
 
 function Login() {
+  const { login: setAuthUser } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState({})
@@ -33,6 +35,7 @@ function Login() {
     try {
       const loggedInUser = await login(email, password)
       setUser(loggedInUser)
+      setAuthUser(loggedInUser)
       setStatus('success')
     } catch (err) {
       setServerError(err.message + ' Try the demo account: demo@slothive.com / password123')

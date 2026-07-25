@@ -35,14 +35,28 @@
   color: var(--color-primary);
 }
 
-.signupItem a {
+.pillItem a {
   background: var(--color-ink);
   color: var(--color-white);
   padding: 0.5rem 1.1rem;
   border-radius: 999px;
 }
 
-.signupItem a:hover {
+.pillItem a:hover {
   background: var(--color-primary);
   color: var(--color-white);
+}
+
+.logoutButton {
+  background: var(--color-ink);
+  color: var(--color-white);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.logoutButton:hover {
+  background: var(--color-primary);
 }
