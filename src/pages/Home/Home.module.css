@@ -1,0 +1,161 @@
+/* Hero + schedule strip */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+.hero h1 { max-width: 14ch; }
+.hero > div:first-child > p { color: var(--color-ink-soft); max-width: 42ch; font-size: 1.15rem; }
+
+.searchForm fieldset {
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.searchForm legend {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-soft);
+  padding-inline: 0.3rem;
+}
+
+.scheduleStrip {
+  background: var(--color-ink);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  color: var(--color-white);
+}
+
+.scheduleStrip h2 {
+  font-size: 1rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-soft);
+  margin-bottom: var(--space-2);
+}
+
+.scheduleStrip ul { display: grid; gap: 0.4rem; }
+
+.scheduleStrip li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: var(--space-2);
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.time { color: #9BA7A0; }
+
+.block {
+  height: 1.6rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.6rem;
+  font-size: 0.75rem;
+}
+
+.available { background: var(--color-primary); }
+.booked { background: var(--color-accent); color: var(--color-ink); }
+.open { background: transparent; border: 1px dashed #4A5560; color: #9BA7A0; }
+
+/* Categories */
+
+.categories ul {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.categories a {
+  display: inline-block;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  padding: 0.5rem 1.1rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+}
+
+.categories a:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* Featured listings grid + cards */
+
+.featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.featured h2, .featured > p:last-child { grid-column: 1 / -1; }
+
+/* How it works */
+
+.howItWorks ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  counter-reset: step;
+}
+
+.howItWorks li {
+  counter-increment: step;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  position: relative;
+  padding-top: var(--space-4);
+}
+
+.howItWorks li::before {
+  content: counter(step);
+  font-family: var(--font-mono);
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-3);
+  color: var(--color-accent);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Host CTA */
+
+.hostCta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+  justify-items: center;
+}
+
+.hostCta h2 { color: var(--color-white); }
+
+.hostCta :global(.button) {
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.hostCta :global(.button):hover {
+  background: var(--color-accent-soft);
+  color: var(--color-primary-dark);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .howItWorks ol { grid-template-columns: 1fr; }
+}

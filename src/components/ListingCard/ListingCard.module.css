@@ -1,0 +1,39 @@
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: grid;
+  gap: 0.5rem;
+  padding-bottom: var(--space-2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(27, 36, 48, 0.1);
+}
+
+.card img { border-radius: 0; aspect-ratio: 16/10; object-fit: cover; }
+
+.card h3, .meta, .rating, .price { padding-inline: var(--space-2); }
+
+.card h3 { font-size: 1.1rem; }
+.card h3 a { color: var(--color-ink); text-decoration: none; }
+.card h3 a:hover { color: var(--color-primary); }
+
+.meta { color: var(--color-ink-soft); font-size: 0.85rem; }
+.rating { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-primary-dark); }
+
+.price {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+  margin-left: var(--space-2);
+  background: var(--color-accent-soft);
+  color: var(--color-ink);
+  padding: 0.25rem 0.7rem 0.25rem 0.9rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  width: fit-content;
+}

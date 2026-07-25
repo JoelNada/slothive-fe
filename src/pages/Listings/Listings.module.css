@@ -1,0 +1,55 @@
+.filters { display: grid; gap: var(--space-2); }
+
+.filterForm fieldset {
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-2);
+  align-items: end;
+}
+
+.filterForm legend {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-ink-soft);
+  padding-inline: 0.3rem;
+}
+
+.priceRange {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.filterActions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.clearButton {
+  background: transparent;
+  color: var(--color-ink-soft);
+  padding: 0.75rem 1rem;
+  text-decoration: underline;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-3);
+}
+
+.emptyState {
+  color: var(--color-ink-soft);
+  background: var(--color-white);
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  text-align: center;
+}

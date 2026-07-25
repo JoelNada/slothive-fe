@@ -1,0 +1,110 @@
+.breadcrumb ol {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.breadcrumb li:not(:last-child)::after { content: "/"; margin-left: 0.4rem; }
+
+.detail {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.header, .gallery, .description, .hostInfo, .reviews { grid-column: 1; }
+
+.meta { color: var(--color-ink-soft); }
+.rating { font-family: var(--font-mono); color: var(--color-primary-dark); }
+
+.gallery ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.gallery ul img { aspect-ratio: 3/2; object-fit: cover; }
+
+.description ul {
+  display: grid;
+  gap: 0.3rem;
+  margin-top: var(--space-1);
+  color: var(--color-ink-soft);
+}
+
+.hostInfo {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 var(--space-2);
+  align-items: center;
+}
+
+.hostInfo h2 { grid-column: 1 / -1; }
+.hostInfo img { border-radius: 50%; width: 60px; height: 60px; object-fit: cover; }
+
+.review {
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-2);
+}
+
+.reviewRating { font-family: var(--font-mono); color: var(--color-primary-dark); font-weight: 600; }
+
+.bookingPanel {
+  grid-column: 2;
+  grid-row: 1 / span 6;
+  position: sticky;
+  top: var(--space-3);
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.price {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.price span { font-size: 0.9rem; font-weight: 400; color: var(--color-ink-soft); }
+
+.bookingPanel fieldset {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+  display: grid;
+  gap: 0.3rem;
+}
+
+.bookingPanel fieldset legend {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+.slotOption { display: flex; align-items: center; gap: 0.5rem; padding: 0.3rem 0; }
+.slotOption label { font-weight: 400; margin: 0; }
+
+.formError {
+  color: var(--color-danger);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.bookingSummary {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  border-top: 1px dashed var(--color-line);
+  padding-top: var(--space-2);
+}
+
+@media (max-width: 900px) {
+  .detail { grid-template-columns: 1fr; }
+  .bookingPanel { grid-column: 1; grid-row: auto; position: static; }
+}
